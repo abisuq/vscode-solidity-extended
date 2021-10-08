@@ -128,7 +128,7 @@ function compilationErrors(filePath, documentText): Diagnostic[] {
             sources: contracts.getContractsForCompilation(),
         };
 
-        const output: string = solc.compileStandardWrapper(JSON.stringify(input), (importPath) => {
+        const output: string = solc.compile(JSON.stringify(input), (importPath) => {
             let sourcePath = importPath;
 
             if (soliditySettings.solidityRoot) {
